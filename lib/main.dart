@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'tela_disciplina.dart';
 
 void main() {
   runApp(const MeuCampusApp());
@@ -47,6 +47,16 @@ class TelaInicio extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            const SizedBox(height: 8),
+            const Text(
+              'O que você quer consultar?',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey,
+              ),
+            ),
+
             const SizedBox(height: 24),
             Card(
               color: Colors.blue.shade50,
@@ -74,7 +84,15 @@ class TelaInicio extends StatelessWidget {
 
             const SizedBox(height: 24),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const TelaDisciplina(),
+                ),
+              );
+            },
+
               child: const Text('Ver disciplina'),
             ),
             const SizedBox(height: 12),
@@ -82,8 +100,6 @@ class TelaInicio extends StatelessWidget {
               onPressed: () {},
               child: const Text('Ver aviso'),
             ),
-
-            
           ],
         ),
       ),
