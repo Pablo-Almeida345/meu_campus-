@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meu_campus/aviso_modal.dart';
 import 'tela_disciplina.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MeuCampusApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TelaInicio()
+      home: TelaInicio(),
     );
   }
 }
@@ -56,7 +57,6 @@ class TelaInicio extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
-
             const SizedBox(height: 24),
             Card(
               color: Colors.blue.shade50,
@@ -80,24 +80,29 @@ class TelaInicio extends StatelessWidget {
                 ),
               ),
             ),
-
-
             const SizedBox(height: 24),
-            ElevatedButton(
+            ElevatedButton.icon(
               onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const TelaDisciplina(),
-                ),
-              );
-            },
-
-              child: const Text('Ver disciplina'),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TelaDisciplina(),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.menu_book),
+              label: const Text('Ver disciplina'),
             ),
             const SizedBox(height: 12),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AvisoModal(),
+                  ),
+                );
+              },
               child: const Text('Ver aviso'),
             ),
           ],
@@ -106,4 +111,3 @@ class TelaInicio extends StatelessWidget {
     );
   }
 }
-
