@@ -47,15 +47,43 @@ class TelaInicio extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 8),
-            const Text(
-              'O que você quer consultar?',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
+            const SizedBox(height: 24),
+            Card(
+              color: Colors.blue.shade50,
+              child: const Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Próxima aula'),
+                    SizedBox(height: 8),
+                    Text(
+                      'Computação Móvel',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Text('Hoje • 19h • Sala 204'),
+                  ],
+                ),
               ),
             ),
+
+
+            const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Ver disciplina'),
+            ),
+            const SizedBox(height: 12),
+            OutlinedButton(
+              onPressed: () {},
+              child: const Text('Ver aviso'),
+            ),
+
+            
           ],
         ),
       ),
